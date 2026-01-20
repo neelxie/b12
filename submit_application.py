@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 def submit_application():
     # Configuration - with environment variables 
     url = "https://b12.io/apply/submission"
-    secret = os.getenv("B12_SECRET", "g3t_m3_0n_th3_t3am_&_l3t5_bu1ld_gr3at_5tuff!")
+    secret = os.getenv("B12_SECRET", 'g3t_m3_0n_th3_t3am_and_l3t5_bu1ld_gr3at_5tuff!')
     # intentionally skipped fast fail if secret is not set for demo purposes
     
     # GitHub provides these default environment variables
