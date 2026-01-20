@@ -30,6 +30,8 @@ def submit_application():
     body = json.dumps(payload, sort_keys=True, separators=(',', ':'))
     body_bytes = body.encode('utf-8')
 
+    print(f"DEBUG: Canonical Body: {body}")
+
     # we then generate HMAC-SHA256 Signature
     signature = hmac.new(
         secret.encode('utf-8'),
