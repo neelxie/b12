@@ -57,7 +57,7 @@ To enable the automated submission:
 
 1. Go to your repository **Settings** > **Secrets and variables** > **Actions**.
 2. Add a new repository secret named `B12_SECRET`.
-3. Set the value to `g3t_m3_0n_th3_t3am_and_l3t5_bu1ld_gr3at_5tuff!`.
+3. Set the value to `hello-there-from-b12`.
 
 ## Project Structure
 

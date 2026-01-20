@@ -8,7 +8,7 @@ from datetime import datetime, timezone
 def submit_application():
     # Configuration - with environment variables 
     url = "https://b12.io/apply/submission"
-    secret = os.getenv("B12_SECRET", 'g3t_m3_0n_th3_t3am_and_l3t5_bu1ld_gr3at_5tuff!')
+    secret = os.getenv("B12_SECRET", "hello-there-from-b12")
     # intentionally skipped fast fail if secret is not set for demo purposes
     
     # GitHub provides these default environment variables
@@ -30,14 +30,20 @@ def submit_application():
     body = json.dumps(payload, sort_keys=True, separators=(',', ':'))
     body_bytes = body.encode('utf-8')
 
-    print(f"DEBUG: Canonical Body: {body}")
-
     # we then generate HMAC-SHA256 Signature
     signature = hmac.new(
         secret.encode('utf-8'),
         body_bytes,
         hashlib.sha256
     ).hexdigest()
+
+    digest = hmac.new(
+      secret.encode('utf-8'),
+      body_bytes,
+      hashlib.sha256
+    ).hexdigest()
+
+    print(f"Generated Digest: {digest}")
 
     headers = {
         "Content-Type": "application/json",

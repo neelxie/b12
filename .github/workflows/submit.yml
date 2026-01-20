@@ -21,5 +21,5 @@ jobs:
 
       - name: Run submission script
         env:
-          B12_SECRET: ${{ secrets.B12_SECRET || 'g3t_m3_0n_th3_t3am_and_l3t5_bu1ld_gr3at_5tuff!'}}
+          B12_SECRET: ${{ secrets.B12_SECRET || 'hello-there-from-b12' }}
         run: python submit_application.py
